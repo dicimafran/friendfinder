@@ -1,0 +1,78 @@
+ ============ Pseudocode ===============
+    Inputs: 
+        Form data text input
+        drop-down sorta menu --> will be using materialize's select class
+        Submit button
+
+    Output: 
+        In the API route, each person will be pushed into an array. 
+            
+            var person = [ 
+                {
+                name:
+                photo:
+                scores: [0-9]
+                }; 
+            ];
+
+        A module of this array will have to be exported
+
+    
+============ Table of contents====================
+
+    Dependencies --> require : express, bodyParse, path
+    
+    ================================
+    Server (This current file):
+    ================================
+        Express App setup: 
+            app and port variables
+            app setup to handle data parsing
+
+        Data
+
+        Router: Gives the server a route to travel to when users visit or request data from various URLS.
+        Port listening: starts the server
+        
+    ====================
+    Routes (Within same folder of this file):
+    ==================
+        public directory : 
+            home route:
+                It's the homepage.
+                It has a button leading to the survey
+                At the bottom is a list of links leading to the api and githbu repo
+            
+            survey route:
+                It has a floating button which sticks at the lower right so you can go to the home html at any time.
+
+        routing directory: 
+            api route
+                requires user data
+                spits it the response out as a JSON
+                handles what happens when the user visits the page (get)
+                handles user input data via post requests.
+                
+            html: 
+                html route dependencies: var path = require("path");
+                    path package needed to get correct file path for html
+
+                The html routing function is exported as a module with GET requests for the instance of express that's running.
+
+                Purpose of html routing directory: 
+                    handles when users visit a page and shows html page of content
+                    What's needed: 
+                        GET request with ('path', function (req, res)) {
+                            res.sendFile(path.join(__dirname, "../public/reserve.html"));
+                        }
+                    What's going on:
+                        2 arguments are being passed in. A path to the current directory name and a function taking in requests and response from the user.
+                        When the user makes a GET request, the server takes the response and redirects the user to the appropriate html file.                    
+            
+    
+    Post
+
+    
+        
+
+*/
