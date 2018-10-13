@@ -7,7 +7,7 @@
 
     <!-- CSS & JS -->
     <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
-   
+
 
     <!-- Bootstrap and materialize -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
@@ -20,9 +20,9 @@
     <link href='https://fonts.googleapis.com/css?family=Niconne' rel='stylesheet'>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js'></script>
-   
+
 
 
 </head>
@@ -73,11 +73,11 @@
                     <select class='custom-select' id='q1' name='q1'>
 
                         <option selected> Select an option. </option>
-                            <option value='1'> 1 (Strongly Disagree) </option>
-                            <option value='2'> 2 </option>
-                            <option value='3'> 3 </option>
-                            <option value='4'> 4 </option>
-                            <option value='5'> 5 (Strongly Agree) </option>
+                        <option value='1'> 1 (Strongly Disagree) </option>
+                        <option value='2'> 2 </option>
+                        <option value='3'> 3 </option>
+                        <option value='4'> 4 </option>
+                        <option value='5'> 5 (Strongly Agree) </option>
 
                     </select>
                 </div>
@@ -87,18 +87,18 @@
                     <select class='custom-select' id='q2' name='q2'>
 
                         <option selected> Select an option. </option>
-                            <option value='1'> 1 (Strongly Disagree) </option>
-                            <option value='2'> 2 </option>
-                            <option value='3'> 3 </option>
-                            <option value='4'> 4 </option>
-                            <option value='5'> 5 (Strongly Agree) </option>
+                        <option value='1'> 1 (Strongly Disagree) </option>
+                        <option value='2'> 2 </option>
+                        <option value='3'> 3 </option>
+                        <option value='4'> 4 </option>
+                        <option value='5'> 5 (Strongly Agree) </option>
 
                     </select>
                 </div>
 
                 <div class='row'>
                     <h5> Q3: You are sure about the meaning of life. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q3'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -110,7 +110,7 @@
 
                 <div class='row'>
                     <h5> Q4: You know that the truth is out there. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q4'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -122,7 +122,7 @@
 
                 <div class='row'>
                     <h5> Q5: You like outoor activities. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q5'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -134,7 +134,7 @@
 
                 <div class='row'>
                     <h5> Q6: You are adventurous enough to try new or weird foods. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q6'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -146,7 +146,7 @@
 
                 <div class='row'>
                     <h5> Q7: You can survive if you get thrown on some deserted island. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q7'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -158,7 +158,7 @@
 
                 <div class='row'>
                     <h5> Q8: It is often difficult for you to relate to other people’s feelings. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q8'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -170,7 +170,7 @@
 
                 <div class='row'>
                     <h5> Q9: You like dogs. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q9'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -184,7 +184,7 @@
 
                 <div class='row'>
                     <h5> Q10: You question some of your life choices and feel deep regret. </h5>
-                    <select class='custom-select'>
+                    <select class='custom-select' id='q10'>
                         <option selected> Select an option. </option>
                         <option value='1'> 1 (Strongly Disagree) </option>
                         <option value='2'> 2 </option>
@@ -206,86 +206,78 @@
 
 </html>
 
-<script type='text/javascript'> 
+<script type='text/javascript'>
 
-    var surveyValArray= [];
+    var surveyValArray = [];
 
-    let newFriend= [ 
-        { 
+    let newFriend =
+    {
         name: $('#name').val().trim(),
         photolink: $('#photo').val().trim(),
-        surveyarray: []
-        }
-    ];
+        surveyarray: [$('q1').val(), $('q2').val(), $('q3').val(), $('q4').val(), $('q5').val(), $('q6').val(), $('q7').val(), $('q8').val(), $('q9').val(), $('q10').val()]
+    };
 
+  var config = {
+      ".chosen-select"           : {},
+      ".chosen-select-deselect"  : {allow_single_deselect:true},
+      ".chosen-select-no-single" : {disable_search_threshold:10},
+      ".chosen-select-no-results": {no_results_text:'Oops, nothing found!'},
+      ".chosen-select-width"     : {width:"95%"}
+    }
 
- $('.custom-select').change(function () {
-    $('')
-});
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
 
-$(".submit").on("click", function(event) {
-    // event.preventDefault();
+    $("#submit").on("click", function(){
 
-   
+    	function validateForm() {
+		  var isValid = true;
+		  $('.form-control').each(function() {
+		    if ( $(this).val() === '' )
+		        isValid = false;
+		  });
+
+		  $('.chosen-select').each(function() {
+
+		  	if( $(this).val() === "")
+		  		isValid = false
+		  })
+		  return isValid;
+		}
+
+		if (validateForm() == true)
+		{
+	    	var newFriend = {
+	    		name: $("#name").val(),
+	    		photo: $("#photo").val(),
+	    		scores: [$("q1").val(),$("q2").val(),$("q3").val(),$("q4").val(),$("q5").val(),$("q6").val(),$("q7").val(),$("q8").val(),$("q9").val(),$("q10").val()]
+	    		}
+
+	    	var currentURL = window.location.origin;
+
+	    	$.post(currentURL + "/api/friends", newFriend, function(data){
+
+	    		$("#bestMatchName").text(data.name);
+	    		$("#bestMatchPhoto").attr("src", data.photo);
+	    		$("#bestMatchPhoto").attr("width", "300");
+
+		    	$("#resultsModal").modal('toggle');
+
+	    	});
+
+		}
+		else
+		{
+			alert("Please fill out all fields before submitting. Thank you.");
+		}
+    	
+    	return false;
     });
 
-
-/* Html Route script - Somehow doesn't seem to work when linking it to an external js script
-
-Things to make functions for:
-
-    --------
-    Concepts
-    --------
-    constructor functions
-
-
-    ------------------------
-    Survey submission button
-    -------------------------
-    target: #surveysubmit
-    event: click
-    Actions
-        grab form element values, put them into a constructor object, and store into variable
-            typed input            
-                name: $('#name').val().trim(),
-                photolink: $('#photo').val().trim(),
-            
-            drop-down selection
-                an array with 9 indexes.
-            
-            var surveyarray= 
-
-        post the friend object to the path, api/friends
-        
-    
-    ---------------------
-    Floating home button
-    ---------------------        
-    target: home button
-    event: click
-    Actions
-        send user back to home page
-    
-*/
-
-/*
-$(".submit").on("click", function(event) {
-    $('.custom-select').change(function () {
-    // event.preventDefault();
-    alert(this.value)
-});
-
-event.preventDefault();
-
-var surveyAns= {
-    name: $('#name').val().trim(),
-    photo: $('#photoLink').val().trim(),
-    scores: [] 
-}
-
-$.post('api/friends', )
-*/
-
+    //Once the modal is closed, the page refreshes.
+    $('.modal').on('hidden.bs.modal', function(){
+    location.reload();
+	});
 
 </script>
